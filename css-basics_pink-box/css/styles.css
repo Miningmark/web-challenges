@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+}
+
+/* put a selector here to select div elements (see index.html) */
+div {
+  font-family: cursive;
+  padding: 8px;
+  background-color: hotpink;
+  color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 8px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* set the height and the width of the box to 150px */
+
+  /* make the background color "hotpink" */
+
+  /* make the text color "white" */
+
+  /* can you give the box round edges with an radius of 8px? */
+
+  /* ✨ feel free to experiment! */
+}
