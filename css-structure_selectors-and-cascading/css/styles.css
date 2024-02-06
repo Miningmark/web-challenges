@@ -127,7 +127,7 @@ li {
 }
 
 /* 13. These styles should apply to all nested lists */
-ul > li {
+.list li .list {
   outline: 2px dashed red;
   margin: 0.5rem 0 0 0;
   background-color: #f1f1f1;
