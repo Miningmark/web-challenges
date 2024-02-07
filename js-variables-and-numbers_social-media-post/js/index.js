@@ -25,6 +25,8 @@ let isReported = true;
 console.log(title);
 console.log(text);
 console.log(likes);
+likes++;
+console.log(likes);
 console.log(creator);
 console.log(isReported);
 // --^-- write your code here --^--
