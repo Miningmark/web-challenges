@@ -20,7 +20,7 @@ if(number % 2 == 0){
 }
 
 // Part 3: Hotdogs
-const numberOfHotdogs = 42;
+const numberOfHotdogs = 4;
 if(numberOfHotdogs < 5){
     console.log("2 euro per hotdog");
 }else if(numberOfHotdogs < 100){
@@ -34,27 +34,13 @@ if(numberOfHotdogs < 5){
 // Part 4: Daytime
 const currentHour = 12;
 
-let statement = "";
+const statement = currentHour > 17 ? "Still need to learn..." : "Partytime!!!";
 
-if(currentHour < 17){
-    statement = "Still need to learn...";
-}else{
-    statement = "Partytime!!!";
-}
 console.log(statement);
 
 // Part 5: Greeting
-let name = "Archibald";
+const name = "Archibald";
 
-let greeting = "Hello " + "//enter your code here" + "!";
-
-if(name === "Archibald"){
-    greeting = "Hello Trainer!"
-}else{
-    greeting = "Hello " + name + " !";
-}
-
-
-
+const greeting = "Hello " + (name == "Archibald" ? "Trainer" : name )+ "!";
 
 console.log(greeting);
