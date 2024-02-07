@@ -41,6 +41,6 @@ console.log(statement);
 // Part 5: Greeting
 const name = "Archibald";
 
-const greeting = "Hello " + (name == "Archibald" ? "Trainer" : name )+ "!";
+const greeting = "Hello " + (name === "Archibald" ? name : "Trainer" ) + "!";
 
 console.log(greeting);
