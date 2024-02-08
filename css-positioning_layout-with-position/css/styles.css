@@ -10,6 +10,15 @@ body {
   margin: 80px 0 45px 0;
   font-family: system-ui;
 }
+main{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 60px;
+}
 
 /**
  *
@@ -30,10 +39,12 @@ body {
 
 .header__text {
   color: #ff4a11;
+  font-size: 1rem;
 }
 
 .header__heading {
   margin: 0;
+  font-size: 1.25rem;
 }
 
 /**
@@ -73,8 +84,8 @@ body {
  */
 .card__bookmark {
   border: 2px solid #ff4a11;
-  font-size: 2em;
-  padding: 6px 12px;
+  font-size: 1.3rem;
+  padding: 6px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   position: absolute;
@@ -99,6 +110,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  bottom: 50px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+@media only screen and (min-width: 640px){
+  .card{
+    width: calc(50% - 40px);
+    margin: 20px ;
+    padding: 3%;
+  }
+  .header {
+    height: 90px;
+  }
+  .header__text {
+    font-size: 1.25rem;
+  }
+  
+  .header__heading {
+    font-size: 2rem;
+  }
+  .card__bookmark {
+    border: 2px solid #ff4a11;
+    font-size: 2em;
+    padding: 6px 12px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .card__bookmark {
+    font-size: 2rem;
+    padding: 6px;
+  }
+}
+@media only screen and (min-width: 1024px){
+  main{
+    width: 70vw;
+    align-self: center;
+  }
 }
