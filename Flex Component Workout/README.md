@@ -2,4 +2,4 @@
 
 Want to flex about your flex knowledge? Try to reproduce the following scenarios:
 
-[](flex-exercise.png)
+![flex-exercise](flex-exercise.png)
