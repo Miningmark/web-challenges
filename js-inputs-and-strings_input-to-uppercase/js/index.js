@@ -14,6 +14,23 @@ Hint: Access the value by using `.value` on the input element
 const input = document.querySelector('[data-js="first-input"]');
 const button = document.querySelector('[data-js="button-uppercase"]');
 
-button.addEventListener("click", () => {
+button.addEventListener("click", function() {
     input.value = input.value.toUpperCase();
+    //onClick();
 });
+
+function onClick (event){
+    input.value = input.value.toUpperCase();
+}
+/*
+button.addEventListener("click", onClick);
+
+function onClick (event){
+    input.value = input.value.toUpperCase();
+}
+
+const myClick = () => { 
+    input.value = input.value.toUpperCase();
+}
+button.addEventListener("click", myClick);
+*/
