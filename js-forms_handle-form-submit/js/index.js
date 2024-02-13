@@ -16,7 +16,7 @@ form.addEventListener("submit", (event) => {
         aboutComplaint: event.target.elements.details.value,
         experience: event.target.elements.badness.value,
         date: event.target.elements.orderDate.value,
-        terms: event.target.elements.tos.value,
+        tos: event.target.elements.tos.checked,
     };
 */
     const formData = new FormData(event.target);

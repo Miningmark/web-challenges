@@ -26,6 +26,27 @@ form.addEventListener("submit", (event) => {
 
   // --v-- write your code here --v--
 
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+  console.log(data);
+  const a = Number(data.numberA);
+  const b = Number(data.numberB);
+  console.log(a);
+  switch (data.operator) {
+    case "addition":
+      result = add(a, b);
+      break;
+    case "subtraction":
+      result = subtract(a, b);
+      break;
+    case "multiplication":
+      result = multiply(a, b);
+      break;
+    case "division":
+      result = divide(a, b);
+      break;
+  }
+
   // --^-- write your code here --^--
 
   resultOutput.textContent = result;
