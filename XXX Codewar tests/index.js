@@ -169,21 +169,41 @@ function toHex(num){
 
 
 
-function cake(recipe, available){
+function cakes(recipe, available){
     const recipeKeys = Object.keys(recipe);
     const availableKeys = Object.keys(available);
+    let max = -1;
 
-    for(let i = 0; i < recipeKeys.length; i++){
-        if(availableKeys.includes(recipeKeys[i])){
-            console.log("vorhanden", recipeKeys[i]);
-        }else{
+    for (const key of recipeKeys) {
+        if (availableKeys.includes(key)) {
+            let temp = Math.floor(available[key] / recipe[key]);
+            if (temp < max || max === -1) {
+                max = temp;
+            }
+        } else {
             return 0;
         }
     }
 
-    //console.log(Object.keys(recipe));
-
-    return "True";
+/*
+    for(let i = 0; i < recipeKeys.length; i++){
+        if(availableKeys.includes(recipeKeys[i])){
+            let temp = Math.floor(available[recipeKeys[i]] / recipe[recipeKeys[i]]);
+            if(temp < max || max == -1){
+                max = temp;
+            }
+        }else{
+            return 0;
+        }
+    }
+*/
+    return max;
 }
 
-console.log(cake({flour: 500, sugar: 200, eggs: 1},{flour: 1200, sugar: 1200, eggs: 5, milk: 200}));
+//console.log(cakes({flour: 500, sugar: 200, eggs: 1},{flour: 1200, sugar: 1200, eggs: 5, milk: 200}));
+//console.log(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100},{sugar: 500, flour: 2000, milk: 2000}));
+
+
+
+
+
