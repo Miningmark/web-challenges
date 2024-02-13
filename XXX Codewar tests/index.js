@@ -233,3 +233,22 @@ function isSolved(board){
 }
 
 //console.log(isSolved([  [0,1,1],[2,0,2],[2,1,0]]));
+
+
+function rot13(message){
+    let input = message.split("");
+    let output = "";
+
+    input.forEach(letter => {
+        if(letter >= 'a' && letter <= 'z' || letter >= 'A' && letter <= 'Z'){    
+            let letterOut = String.fromCharCode(letter.charCodeAt(0) + 13);
+            output += letterOut;
+        }else{
+            output += letter;
+        }
+    });
+    return output;
+}
+
+
+console.log(rot13("abcde12 34"));
