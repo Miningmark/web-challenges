@@ -93,7 +93,7 @@ var p = [  0,   1,   5,   8,   9,  10,  17,  17,  20,  24, // 0X's
           57,  60,  65,  68,  70,  74,  80,  81,  84,  85, // 2X's
           87,  91,  95,  99, 101, 104, 107, 112, 115, 116, // 3X's
          119]; // 40th element
-
+/*
 // Your new function as given to you by me, your boss.
 var cutLog = function(p, n) {
     if (n == 0) return 0;
@@ -110,10 +110,80 @@ var cutLog = function(p, n) {
     }
     return "solution"; // Good luck intern!
 }
+*/
+function cutLog(p, n) {
+    const memo = Array.from({ length: n + 1 }, () => -1);
+    console.log(memo);
 
-console.log(cutLog(p,1));
-console.log(cutLog(p,5));
-console.log(cutLog(p,8));
-console.log(cutLog(p,10));
-console.log(cutLog(p,22));
-console.log(cutLog(p,35));
+    function helper(n) {
+      if (n === 0) return 0;
+      if (memo[n] !== -1) return memo[n];
+  
+      let q = -1;
+      for (let i = 1; i <= n; i++) {
+        q = Math.max(q, p[i] + helper(n - i));
+        console.log("Durchlauf: " + i + " " + q);
+      }
+  
+      memo[n] = q;
+      return q;
+    }
+  
+    return helper(n);
+  }
+
+//console.log(cutLog(p,1));
+//console.log(cutLog(p,5));
+//console.log(cutLog(p,8));
+//console.log(cutLog(p,10));
+//console.log(cutLog(p,22));
+//console.log(cutLog(p,40));
+
+
+
+
+function rgbToHex(r, g, b) {
+    if(r < 0 || g < 0 || b < 0){
+        return "000000"
+    }
+    const hexR = toHex(r);
+    const hexG = toHex(g);
+    const hexB = toHex(b);
+  
+    return `${hexR}${hexG}${hexB}`;
+}
+
+function toHex(num){
+    let temp = num.toString(16);
+    if(temp.length == 1){
+        temp = "0" + temp;
+    }
+    return temp;
+}
+
+//console.log(rgbToHex(0,0,0));
+//console.log(rgbToHex(0,0,-20));
+//console.log(rgbToHex(255,255,255));
+
+
+
+
+
+function cake(recipe, available){
+    const recipeKeys = Object.keys(recipe);
+    const availableKeys = Object.keys(available);
+
+    for(let i = 0; i < recipeKeys.length; i++){
+        if(availableKeys.includes(recipeKeys[i])){
+            console.log("vorhanden", recipeKeys[i]);
+        }else{
+            return 0;
+        }
+    }
+
+    //console.log(Object.keys(recipe));
+
+    return "True";
+}
+
+console.log(cake({flour: 500, sugar: 200, eggs: 1},{flour: 1200, sugar: 1200, eggs: 5, milk: 200}));
