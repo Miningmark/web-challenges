@@ -23,7 +23,7 @@ const cards = [
   },
 ];
 
-const onlyCardWithIdTwo = cards.filter((card) => card.id ==2);
+const onlyCardWithIdTwo = cards.filter((card) => card.id == 2);
 console.log(onlyCardWithIdTwo);
 
 const allCardsWith3Tags = cards.filter((card) => card.tags.length == 3);
