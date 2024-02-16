@@ -21,9 +21,12 @@ const colors = [
 
 const body = document.querySelector("body");
 
-colors.forEach( (color) =>{
+colors.forEach( (color) => renderColorBox(color));
+
+
+function renderColorBox(color){
   const element = document.createElement("div"); 
   element.classList.add("color-box");
   element.style.backgroundColor = color;
   body.append(element);
-});
+}
