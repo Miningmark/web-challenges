@@ -13,4 +13,4 @@ async function fetchData() {
 const starwarsDB = await fetchData();
 console.log(starwarsDB);
 const r2d2EyeColor = starwarsDB.find((character) => character.name == "R2-D2").eye_color;
-console.log("R2-D2 Eyecolor" ,r2d2EyeColor);
+console.log("R2-D2 Eyecolor", r2d2EyeColor);
