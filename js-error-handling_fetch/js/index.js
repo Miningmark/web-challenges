@@ -9,11 +9,6 @@ async function getUser(url) {
 
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`);
-      if (response.status === 404) {
-        throw new Error("User not found");
-      } else {
-        throw new Error(`Failed to fetch: ${response.statusText}`);
-      }
     }
 
     const json = await response.json();
@@ -31,9 +26,9 @@ document.querySelectorAll("button[data-url]").forEach((button) =>
       userElement.innerHTML = "User info will appear here.";
     }else{
       userElement.innerHTML = `
-      <h2>${user.first_name} ${user.last_name}</h2>
-      <img alt="${user.first_name} ${user.last_name}" src="${user.avatar}"/>
-    `;
+        <h2>${user.first_name} ${user.last_name}</h2>
+        <img alt="${user.first_name} ${user.last_name}" src="${user.avatar}"/>
+      `;
     errorElement.innerText = ""; 
     }
   })
