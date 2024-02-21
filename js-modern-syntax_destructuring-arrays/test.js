@@ -1,4 +1,4 @@
-import * as exercises from "./index";
+import * as exercises from "./index.js";
 
 test("Exercise 1: name is Egg, price is 0.25 and quantity is 12", () => {
   expect(exercises.name).toEqual("Egg");

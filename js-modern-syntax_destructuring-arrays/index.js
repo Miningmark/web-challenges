@@ -6,7 +6,7 @@ console.clear();
 
 const item = ["Egg", 0.25, 12];
 
-const [name, price, quantity] = item;
+export const [name, price, quantity] = item;
 console.log(name,price,quantity);
 
 // example: export const [value1, value2] = array;
@@ -15,7 +15,7 @@ console.log(name,price,quantity);
 // Use array destructuring to extract the variables "firstNameOfChris", "lastNameOfChris" and "ageOfChris".
 
 const personChris = [12, "Chris", "Owen"];
-const [ageOfChris, firstNameOfChris, lastNameOfChris] = personChris;
+export const [ageOfChris, firstNameOfChris, lastNameOfChris] = personChris;
 console.log(ageOfChris,firstNameOfChris,lastNameOfChris);
 
 // EXERCISE 3
@@ -23,7 +23,7 @@ console.log(ageOfChris,firstNameOfChris,lastNameOfChris);
 // Make sure not to have unused variables.
 
 const personAlex = ["Alex", 12, "Main"];
-const [firstNameOfAlex, , lastNameOfAlex] = personAlex;
+export const [firstNameOfAlex, , lastNameOfAlex] = personAlex;
 console.log(firstNameOfAlex, lastNameOfAlex);
 
 // EXERCISE 4
@@ -31,7 +31,7 @@ console.log(firstNameOfAlex, lastNameOfAlex);
 // as variable called "lastName".
 
 const students = ["Christina", "Jon", "Alexandare"];
-const [, , lastName] = students;
+export const [, , lastName] = students;
 console.log(lastName);
 
 // EXERCISE 5
@@ -39,7 +39,7 @@ console.log(lastName);
 // Assign the given order of students to variables called "student1" to "student5".
 
 const nestedStudents = ["Chris", ["Ahmad", "Antigoni"], ["Toby", "Sam"]];
-const [student1, [student2, student3], [student4, student5]] = nestedStudents;
+export const [student1, [student2, student3], [student4, student5]] = nestedStudents;
 console.log(student1,student2,student3,student4,student5);
 
 // EXERCISE 6
@@ -48,7 +48,7 @@ console.log(student1,student2,student3,student4,student5);
 
 const values = [1, 6, 7, 9, 12, 5, 4];
 
-const result = add(...values); // Spread values inside this function call
+export const result = add(...values); // Spread values inside this function call
 
 function add(...values) {
   return values.reduce(
