@@ -7,13 +7,13 @@ export default function App() {
       <AnyComponent
         buttonText="Brokkoli"
         cancelText="abbrechen"
-        onButtonClick={(x) => console.log("Component 1", x)}
+        onButtonClick={(x) => console.log("Component 1")}
         hasCancelButton
       />
       <hr />
       <AnyComponent
         buttonText="Pfirsich"
-        onButtonClick={(x) => console.log("Component 2", x)}
+        onButtonClick={(x) => console.log("Component 2", x, x.target.id)}
       >
         Wie komm ihr hier ran?
       </AnyComponent>
