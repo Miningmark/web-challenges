@@ -2,27 +2,31 @@ import React from "react";
 import "./styles.css";
 
 export default function App() {
-  return <Button textColor="blue" disabled={false} text="Hello" buttonClick={handleClick}/>;
+  function handleClick(event){
+    console.log(event); 
+    alert("You clicked me!");
+  }
+  return <Button textColor="blue" text="Hello" buttonClick={handleClick}/>;
 }
 
+
+
 function Button({ textColor, disabled, text, buttonClick }) {
-  const button = (
+  const style = {
+    backgroundColor: "lightblue",
+    color: textColor,
+    height: "100px",
+  };
+  
+  return (
     <button
-      style={{
-        backgroundColor: "lightblue",
-        color: textColor,
-        height: "100px",
-      }}
+      style={style}
       disabled={disabled}
       onClick={buttonClick}
     >
       {text}
     </button>
   );
-  return button;
 }
 
-function handleClick(event){
-  console.log(event); 
-  alert("You clicked me!");
-}
+
