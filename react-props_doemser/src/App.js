@@ -7,7 +7,7 @@ export default function App() {
       <AnyComponent
         buttonText="Brokkoli"
         cancelText="abbrechen"
-        onButtonClick={(x) => console.log("Component 1")}
+        onButtonClick={() => console.log("Component 1")}
         hasCancelButton
       />
       <hr />
