@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 
 import Header from "./components/header.js";
-import avatar from "./img/avatar.jpg";
 import logo from "./img/logo.jpg";
 import Nav from "./components/Navigation.js";
 import Img from "./components/image.js";
