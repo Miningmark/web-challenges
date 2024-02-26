@@ -56,7 +56,7 @@ export default function App() {
         type="button"
         onClick={() => {
           console.log("Reset Code!");
-          resetCode();
+          resetCode("");
         }}
       >
         Reset
