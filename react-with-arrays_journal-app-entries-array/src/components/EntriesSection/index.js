@@ -50,7 +50,7 @@ export default function EntriesSection() {
         {entries.map(({id, date, motto, notes}, index) => ( 
           <Fragment key={id}>
             <Entry date={date} motto={motto} notes={notes}/>
-            {index !== entries.length - 1 && <Divider />}
+            {index < entries.length - 1 && <Divider />}
           </Fragment>
         ))}
         
