@@ -1,15 +1,15 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ColoredNumber from "./ColoredNumber";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
 
-  const incrementCount = () => {
+  function incrementCount() {
     setCount(count + 1);
   };
 
-  const decrementCount = () => {
+  function decrementCount() {
     setCount(count - 1);
   };
 
