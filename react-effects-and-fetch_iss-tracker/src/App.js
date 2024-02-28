@@ -26,10 +26,10 @@ export default function App() {
   }
 
   useEffect(() => {
-    setInterval(getISSCoords, 5000);
+    const interval = setInterval(getISSCoords, 5000);
 
     return () => {
-      clearInterval();
+      clearInterval(interval);
     };
   }, []);
 

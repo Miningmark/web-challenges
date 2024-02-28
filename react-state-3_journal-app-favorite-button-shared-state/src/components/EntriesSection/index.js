@@ -21,7 +21,7 @@ export default function EntriesSection({ entries, onIsFavorite }) {
         {entries.map((entry, index) => (
           <Fragment key={entry.id}>
             {index > 0 ? <Divider /> : null}
-            <Entry id={entry.id} date={entry.date} motto={entry.motto} notes={entry.notes} isFavorite={entry.isFavorite} onIsFavorite={onIsFavorite}/>
+            <Entry entry={entry} onIsFavorite={onIsFavorite} />
           </Fragment>
         ))}
       </div>
