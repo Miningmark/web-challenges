@@ -6,8 +6,7 @@ export default function Volumes() {
   const router = useRouter();
 
   function randomPage() {
-    const random = volumes[Math.floor(Math.random() * volumes.length)];
-    router.push(`/volumes/${random.slug}`);
+    router.push(`/volumes/${volumes[Math.floor(Math.random() * volumes.length)].slug}`);
   }
 
   return (
