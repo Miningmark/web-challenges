@@ -5,7 +5,7 @@ import { useRouter } from "next/router.js";
 
 export default function VolumeDetail() {
   const router = useRouter();
-  const slugTitle = router.query.slug;
+  const { slug: slugTitle } = router.query;
 
   const volumeIndex = volumes.findIndex(({ slug }) => slug === slugTitle);
 
@@ -31,12 +31,7 @@ export default function VolumeDetail() {
           </li>
         ))}
       </ul>
-      <Image
-        src={cover}
-        alt={`Cover image of ${title}`}
-        width={140}
-        height={230}
-      />
+      <Image src={cover} alt={`Cover image of ${title}`} width={140} height={230} />
       {previousVolume ? (
         <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
@@ -46,9 +41,7 @@ export default function VolumeDetail() {
       ) : null}
       {nextVolume ? (
         <div>
-          <Link href={`/volumes/${nextVolume.slug}`}>
-            Next Volume: {nextVolume.title} →
-          </Link>
+          <Link href={`/volumes/${nextVolume.slug}`}>Next Volume: {nextVolume.title} →</Link>
         </div>
       ) : null}
     </>

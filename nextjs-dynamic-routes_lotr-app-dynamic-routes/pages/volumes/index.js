@@ -22,13 +22,7 @@ export default function Volumes() {
           );
         })}
       </ul>
-      <button
-        onClick={() => {
-          randomPage();
-        }}
-      >
-        Random volumes
-      </button>
+      <button onClick={randomPage}>Random volumes</button>
     </>
   );
 }
