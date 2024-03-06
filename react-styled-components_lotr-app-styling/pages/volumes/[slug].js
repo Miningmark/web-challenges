@@ -2,6 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  background: ${({ $backgroundColor }) => $backgroundColor};
+`;
+
+const StyledImage = styled(Image)`
+  box-shadow: var(--box-shadow-book);
+
+  &:hover {
+    box-shadow: var(--box-shadow-book--hover);
+  }
+`;
 
 export default function VolumeDetail() {
   const router = useRouter();
@@ -17,10 +30,10 @@ export default function VolumeDetail() {
     return null;
   }
 
-  const { title, description, cover, books } = volume;
+  const { title, description, cover, books, color } = volume;
 
   return (
-    <>
+    <StyledDiv $backgroundColor={color}>
       <Link href="/volumes">← All Volumes</Link>
       <h1>{title}</h1>
       <p>{description}</p>
@@ -31,12 +44,7 @@ export default function VolumeDetail() {
           </li>
         ))}
       </ul>
-      <Image
-        src={cover}
-        alt={`Cover image of ${title}`}
-        width={140}
-        height={230}
-      />
+      <StyledImage src={cover} alt={`Cover image of ${title}`} width={140} height={230} />
       {previousVolume ? (
         <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
@@ -46,11 +54,9 @@ export default function VolumeDetail() {
       ) : null}
       {nextVolume ? (
         <div>
-          <Link href={`/volumes/${nextVolume.slug}`}>
-            Next Volume: {nextVolume.title} →
-          </Link>
+          <Link href={`/volumes/${nextVolume.slug}`}>Next Volume: {nextVolume.title} →</Link>
         </div>
       ) : null}
-    </>
+    </StyledDiv>
   );
 }
