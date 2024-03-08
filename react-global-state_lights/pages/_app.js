@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <Layout>
+    <Layout isDimmed={lightsOn === 0 ? true : false}>
       <GlobalStyle />
       <Component
         {...pageProps}
@@ -43,7 +43,6 @@ export default function App({ Component, pageProps }) {
         toggleLight={handleSetLight}
         lightsOn={lightsOn}
         onAllLights={handleAllLights}
-        isDimmed={lightsOn === 0 ? true : false}
       />
     </Layout>
   );
