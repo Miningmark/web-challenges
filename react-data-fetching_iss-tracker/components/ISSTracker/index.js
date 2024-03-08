@@ -32,7 +32,6 @@ export default function ISSTracker() {
       <Controls
         longitude={data?.longitude || 0}
         latitude={data?.latitude || 0}
-        // Pass the handleRefresh function to onRefresh prop
         onRefresh={handleRefresh}
       />
     </main>
