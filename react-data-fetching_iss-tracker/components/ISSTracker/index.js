@@ -1,4 +1,4 @@
-import useSWR, { SWRConfig } from "swr";
+import useSWR from "swr";
 import Controls from "../Controls/index";
 import Map from "../Map/index";
 
