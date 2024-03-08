@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useSWR, { SWRConfig } from "swr";
 import Controls from "../Controls/index";
 import Map from "../Map/index";
