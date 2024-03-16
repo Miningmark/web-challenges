@@ -10,8 +10,6 @@ export default function ProductForm() {
     const formData = new FormData(event.target);
     const productData = Object.fromEntries(formData);
 
-    //console.log("productData from Form", productData);
-
     const response = await fetch("api/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
