@@ -18,7 +18,7 @@ export default function Product() {
 
     const formData = new FormData(event.target);
     const productData = Object.fromEntries(formData);
-    console.log(productData);
+    //console.log(productData);
     const respone = await fetch(`/api/products/${id}`, {
       method: "PUT",
       headers: {
@@ -63,7 +63,9 @@ export default function Product() {
       </p>
       {data.reviews.length > 0 && <Comments reviews={data.reviews} />}
 
-      {isEditMode ? <ProductForm handleOnSubmit={handleEditProduct} heading="Edit Fish" /> : null}
+      {isEditMode ? (
+        <ProductForm handleOnSubmit={handleEditProduct} heading="Edit Fish" initialData={data} />
+      ) : null}
 
       <button type="button" onClick={() => handleDeleteProduct()}>
         Delete
