@@ -9,6 +9,7 @@ const StyledUl = styled.ul`
   align-items: center;
   gap: 10px;
   margin-top: 100px;
+  list-style-type: none;
 `;
 export default function HomePage() {
   const { data, isLoading, error } = useSWR("api/places", { fallbackData: [] });
