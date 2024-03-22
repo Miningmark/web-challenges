@@ -18,7 +18,7 @@ export default async function handler(request, response) {
   }
 
   if (request.method === "PUT") {
-    const place = await Place.findByIdAndUpdate(id);
+    const place = await Place.findByIdAndUpdate(id, request.body);
     return response.status(200).json({ status: "Place updated successfully!" });
   }
 

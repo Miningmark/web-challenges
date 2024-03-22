@@ -11,6 +11,34 @@ const StyledUl = styled.ul`
   margin-top: 100px;
   list-style-type: none;
 `;
+
+const StyledLink = styled(Link)`
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: orange;
+  color: black;
+  border-radius: 50%;
+  border: 2px solid black;
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  text-align: center;
+
+  transform: scale(1);
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+`;
+
 export default function HomePage() {
   const { data, isLoading, error } = useSWR("api/places", { fallbackData: [] });
   return (
@@ -27,6 +55,7 @@ export default function HomePage() {
           </li>
         ))}
       </StyledUl>
+      <StyledLink href="/create">Add Place</StyledLink>
     </>
   );
 }
